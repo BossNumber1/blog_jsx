@@ -11,9 +11,8 @@ function App() {
                     <PostForm />
                 </div>
             </div>
-            <div className="row">
+            <div className="row pt-3">
                 <div className="col">
-                    <h2>Синхронные посты</h2>
                     <Posts />
                 </div>
                 <div className="col">

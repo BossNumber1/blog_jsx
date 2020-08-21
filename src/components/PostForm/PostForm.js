@@ -15,14 +15,14 @@ class PostForm extends React.Component {
             title: "",
             messagePost: "",
             successSelectFile: "",
-            ye: "",
+            fileImg: "",
         };
     }
 
     submitHandler = (e) => {
         e.preventDefault();
 
-        const { title, messagePost, successSelectFile, ye } = this.state;
+        const { title, messagePost, successSelectFile, fileImg } = this.state;
 
         if (!title.trim() || !messagePost.trim() || !successSelectFile.trim()) {
             return this.props.showAlert("Все поля должны быть заполнены");
@@ -33,7 +33,7 @@ class PostForm extends React.Component {
             messagePost,
             time: timer(),
             successSelectFile,
-            ye,
+            fileImg,
             id: Date.now().toString(),
         };
 
@@ -79,7 +79,7 @@ class PostForm extends React.Component {
                     ...prev,
                     ...{
                         successSelectFile: e.target.files[0].name,
-                        ye: result,
+                        fileImg: result,
                     },
                 }));
             })
