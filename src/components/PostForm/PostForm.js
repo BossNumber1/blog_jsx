@@ -6,11 +6,12 @@ import { timer } from "../time";
 import InputTitle from "./InputTitle";
 import InputMessage from "./InputMessage";
 import InputDownloadImg from "./InputDownloadImg";
+// import "./PostForm.css";
 
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { title: "", messagePost: "" };
+        this.state = { title: "", messagePost: "", successSelectFile: "" };
     }
 
     submitHandler = (e) => {
@@ -49,6 +50,16 @@ class PostForm extends React.Component {
         }));
     };
 
+    successDownloadImgHandler = (e) => {
+        e.persist();
+        this.setState((prev) => ({
+            ...prev,
+            ...{ successSelectFile: e.target.value },
+        }));
+    };
+
+    // event.target.files
+
     render() {
         return (
             <form onSubmit={this.submitHandler}>
@@ -64,7 +75,10 @@ class PostForm extends React.Component {
                     onChange={this.changeMessagePostHandler}
                 />
 
-                <InputDownloadImg />
+                <InputDownloadImg
+                    onChange={this.successDownloadImgHandler}
+                    successSelectFile={this.state.successSelectFile}
+                />
 
                 <button className="btn btn-success" type="submit">
                     Создать

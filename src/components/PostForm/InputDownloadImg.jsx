@@ -1,6 +1,7 @@
 import React from "react";
+import "./PostForm.css";
 
-export default () => {
+export default ({ onChange, successSelectFile }) => {
     return (
         <div>
             <div className="form-group">
@@ -11,23 +12,18 @@ export default () => {
                         <input
                             type="file"
                             className="custom-file-input"
-                            id="inputGroupFile02"
+                            id="inputGroupFile01"
+                            aria-describedby="inputGroupFileAddon01"
+                            onChange={onChange}
                         />
                         <label
                             className="custom-file-label"
-                            for="inputGroupFile02"
-                            aria-describedby="inputGroupFileAddon02"
+                            for="inputGroupFile01"
                         >
-                            Выбери файл
+                            {successSelectFile
+                                ? successSelectFile
+                                : "Выберите файл"}
                         </label>
-                    </div>
-                    <div className="input-group-append">
-                        <span
-                            className="input-group-text"
-                            id="inputGroupFileAddon02"
-                        >
-                            Загрузить
-                        </span>
                     </div>
                 </div>
             </div>
