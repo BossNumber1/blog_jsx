@@ -18,7 +18,7 @@ export default ({ onChange, successSelectFile }) => {
                         />
                         <label
                             className="custom-file-label"
-                            for="inputGroupFile01"
+                            htmlFor="inputGroupFile01"
                         >
                             {successSelectFile
                                 ? successSelectFile

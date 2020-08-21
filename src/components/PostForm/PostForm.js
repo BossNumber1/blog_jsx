@@ -11,27 +11,34 @@ import InputDownloadImg from "./InputDownloadImg";
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { title: "", messagePost: "", successSelectFile: "" };
+        this.state = {
+            title: "",
+            messagePost: "",
+            successSelectFile: "",
+            ye: "",
+        };
     }
 
     submitHandler = (e) => {
         e.preventDefault();
 
-        const { title, messagePost } = this.state;
+        const { title, messagePost, successSelectFile, ye } = this.state;
 
-        if (!title.trim() || !messagePost.trim()) {
+        if (!title.trim() || !messagePost.trim() || !successSelectFile.trim()) {
             return this.props.showAlert("Все поля должны быть заполнены");
         }
 
         const newPost = {
             title,
             messagePost,
-            id: Date.now().toString(),
             time: timer(),
+            successSelectFile,
+            ye,
+            id: Date.now().toString(),
         };
 
         this.props.createPost(newPost);
-        this.setState({ title: "", messagePost: "" });
+        this.setState({ title: "", messagePost: "", successSelectFile: "" });
     };
 
     changeInputHandler = (e) => {
@@ -52,13 +59,32 @@ class PostForm extends React.Component {
 
     successDownloadImgHandler = (e) => {
         e.persist();
-        this.setState((prev) => ({
-            ...prev,
-            ...{ successSelectFile: e.target.value },
-        }));
-    };
 
-    // event.target.files
+        const toBase64 = (file) =>
+            new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = (error) => reject(error);
+            });
+
+        async function Main() {
+            const file = e.target.files[0];
+            return await toBase64(file);
+        }
+
+        Main()
+            .then((result) => {
+                this.setState((prev) => ({
+                    ...prev,
+                    ...{
+                        successSelectFile: e.target.files[0].name,
+                        ye: result,
+                    },
+                }));
+            })
+            .catch(console.log);
+    };
 
     render() {
         return (

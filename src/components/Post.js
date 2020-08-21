@@ -3,11 +3,7 @@ import React from "react";
 export default ({ post }) => {
     return (
         <div className="card" style={{ maxWidth: 18 + "rem" }}>
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Vladimir_Putin_%282017-07-08%29.jpg/250px-Vladimir_Putin_%282017-07-08%29.jpg"
-                className="card-img-top"
-                alt="..."
-            />
+            <img src={post.ye} className="card-img-top" alt={post.ye} />
             <div className="card-body">
                 <h5 className="card-title">{post.title}</h5>
                 <p className="card-text">
