@@ -6,27 +6,27 @@ export default () => {
             <div className="form-group">
                 <label htmlFor="messagePost">Добавить изображение</label>
 
-                <div class="input-group mb-3">
-                    <div class="custom-file">
+                <div className="input-group mb-3">
+                    <div className="custom-file">
                         <input
                             type="file"
-                            class="custom-file-input"
+                            className="custom-file-input"
                             id="inputGroupFile02"
                         />
                         <label
-                            class="custom-file-label"
+                            className="custom-file-label"
                             for="inputGroupFile02"
                             aria-describedby="inputGroupFileAddon02"
                         >
-                            Choose file
+                            Выбери файл
                         </label>
                     </div>
-                    <div class="input-group-append">
+                    <div className="input-group-append">
                         <span
-                            class="input-group-text"
+                            className="input-group-text"
                             id="inputGroupFileAddon02"
                         >
-                            Upload
+                            Загрузить
                         </span>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ export default ({ post }) => {
                         <cite title="Source Title">{post.time}</cite>
                     </footer>
                 </p>
-                <a href="#" className="btn btn-primary">
+                <a href="/#" className="btn btn-primary">
                     Читать дальше
                 </a>
             </div>

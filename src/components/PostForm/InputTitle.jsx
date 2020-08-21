@@ -1,6 +1,6 @@
 import React from "react";
 
-export default () => {
+export default ({ value, onChange }) => {
     return (
         <div>
             <div className="form-group">
@@ -9,9 +9,9 @@ export default () => {
                     type="text"
                     className="form-control"
                     id="title"
-                    value={this.state.title}
+                    value={value}
                     name="title"
-                    onChange={this.changeInputHandler}
+                    onChange={onChange}
                 />
             </div>
         </div>

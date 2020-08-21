@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { createPost, showAlert } from "../../redux/actions";
 import { Alert } from "../Alert";
 import { timer } from "../time";
-// import InputTitle from "./InputTitle";
-// import InputDownloadImg from "./InputDownloadImg";
-// import InputMessage from "./InputMessage";
+import InputTitle from "./InputTitle";
+import InputMessage from "./InputMessage";
+import InputDownloadImg from "./InputDownloadImg";
 
 class PostForm extends React.Component {
     constructor(props) {
@@ -54,29 +54,17 @@ class PostForm extends React.Component {
             <form onSubmit={this.submitHandler}>
                 {this.props.alert && <Alert text={this.props.alert} />}
 
-                <label htmlFor="title">Заголовок поста</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="title"
+                <InputTitle
                     value={this.state.title}
-                    name="title"
                     onChange={this.changeInputHandler}
                 />
 
-                <label htmlFor="messagePost">Сообщение поста</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="messagePost"
+                <InputMessage
                     value={this.state.messagePost}
-                    name="messagePost"
                     onChange={this.changeMessagePostHandler}
                 />
 
-                {/* <InputTitle />
-                <InputMessage />
-                <InputDownloadImg /> */}
+                <InputDownloadImg />
 
                 <button className="btn btn-success" type="submit">
                     Создать
