@@ -9,6 +9,7 @@ import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
 import { forbiddenWordsMiddleware } from "./redux/middleware";
 import { sagaWatcher } from "./redux/sagas";
+import "./index.css";
 
 const saga = createSagaMiddleware();
 

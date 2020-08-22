@@ -2,6 +2,7 @@ import React from "react";
 import PostForm from "./components/PostForm/PostForm";
 import Posts from "./components/Posts";
 import FetchedPosts from "./components/FetchedPosts";
+import "materialize-css";
 
 function App() {
     return (
