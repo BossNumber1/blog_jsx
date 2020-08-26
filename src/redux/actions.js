@@ -1,5 +1,6 @@
 import {
     CREATE_POST,
+    UPGRADE_PROFILE,
     SHOW_LOADER,
     HIDE_LOADER,
     SHOW_ALERT,
@@ -11,6 +12,13 @@ export function createPost(post) {
     return {
         type: CREATE_POST,
         payload: post,
+    };
+}
+
+export function upgradeProfile(profileData) {
+    return {
+        type: UPGRADE_PROFILE,
+        payload: profileData,
     };
 }
 

@@ -4,6 +4,7 @@ import Album from "./pages/Album";
 import PostMen from "./pages/PostMen";
 import AuthPage from "./pages/AuthPage";
 import Menu from "./pages/Menu";
+import Settings from "./pages/Settings";
 
 export const useRoutes = (isAuthenticated) => {
     if (isAuthenticated) {
@@ -17,6 +18,9 @@ export const useRoutes = (isAuthenticated) => {
                 </Route>
                 <Route path="/menu" exact>
                     <Menu />
+                </Route>
+                <Route path="/settings" exact>
+                    <Settings />
                 </Route>
                 <Redirect to="/menu" />
             </Switch>
