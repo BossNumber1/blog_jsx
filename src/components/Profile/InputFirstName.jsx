@@ -3,13 +3,13 @@ import React from "react";
 export default (props) => {
     return (
         <div className="form-group pb-1">
-            <label htmlFor="title">Ваше имя</label>
+            <label htmlFor="title">Имя</label>
             <input
                 type="text"
                 className="form-control"
-                id="name"
+                id="firstName"
                 value={props.value}
-                name="name"
+                name="firstName"
                 onChange={props.onChange}
             />
         </div>

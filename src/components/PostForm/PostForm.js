@@ -49,14 +49,6 @@ class PostForm extends React.Component {
         }));
     };
 
-    changeMessagePostHandler = (e) => {
-        e.persist();
-        this.setState((prev) => ({
-            ...prev,
-            ...{ [e.target.name]: e.target.value },
-        }));
-    };
-
     successDownloadImgHandler = (e) => {
         e.persist();
 
@@ -98,7 +90,7 @@ class PostForm extends React.Component {
 
                 <InputMessage
                     value={this.state.messagePost}
-                    onChange={this.changeMessagePostHandler}
+                    onChange={this.changeInputHandler}
                 />
 
                 <InputDownloadImg

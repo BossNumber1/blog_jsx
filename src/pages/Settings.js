@@ -2,32 +2,35 @@ import React from "react";
 import { connect } from "react-redux";
 import { upgradeProfile, showAlert } from "../redux/actions";
 import { Alert } from "../components/Alert";
-import InputName from "../components/Profile/InputName";
+import InputFirstName from "../components/Profile/InputFirstName";
+import InputSecondName from "../components/Profile/InputSecondName";
 
 class Settings extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            name: "",
+            firstName: "",
+            secondName: "",
         };
     }
 
     submitHandler = (e) => {
         e.preventDefault();
 
-        const { name } = this.state;
+        const { firstName, secondName } = this.state;
 
-        if (!name.trim()) {
+        if (!firstName.trim() || !secondName.trim()) {
             return this.props.showAlert("Все поля должны быть заполнены");
         }
 
         const newDataUser = {
-            name,
+            firstName,
+            secondName,
         };
 
         this.props.upgradeProfile(newDataUser);
-        this.setState({ name: "" });
+        this.setState({ firstName: "", secondName: "" });
     };
 
     changeInputHandler = (e) => {
@@ -41,20 +44,32 @@ class Settings extends React.Component {
 
     render() {
         console.log("prop =", this.props);
-        let firstname;
-        let propsFirstname = this.props.firstname;
+        let firstName, secondName;
+        let propsFirstName = this.props.firstName;
+        let propsSecondName = this.props.secondName;
 
-        if (propsFirstname.length !== 0) {
-            firstname = this.props.firstname[0].name;
+        if (propsFirstName.length !== 0) {
+            firstName = this.props.firstName[0].firstName;
+        }
+
+        if (propsSecondName.length !== 0) {
+            secondName = this.props.secondName[0].secondName;
         }
 
         return (
             <div className="container pt-4">
-                <form onSubmit={this.submitHandler}>
+                <h4>Настройки</h4>
+
+                <form onSubmit={this.submitHandler} className="pb-5">
                     {this.props.alert && <Alert text={this.props.alert} />}
 
-                    <InputName
-                        value={this.state.name}
+                    <InputFirstName
+                        value={this.state.firstName}
+                        onChange={this.changeInputHandler}
+                    />
+
+                    <InputSecondName
+                        value={this.state.secondName}
                         onChange={this.changeInputHandler}
                     />
 
@@ -62,12 +77,12 @@ class Settings extends React.Component {
                         Обновить
                     </button>
                 </form>
-
-                {firstname && (
+                {firstName && secondName && (
                     <div className="jumbotron jumbotron-fluid pt-3">
                         <div className="container">
                             <h1 className="display-4">Твои данные</h1>
-                            <p className="lead">Имя - {firstname}</p>
+                            <p className="lead">Имя - {firstName}</p>
+                            <p className="lead">Фамилия - {secondName}</p>
                         </div>
                     </div>
                 )}
@@ -83,7 +98,8 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => ({
     alert: state.app.alert,
-    firstname: state.profile.profile,
+    firstName: state.profile.profile,
+    secondName: state.profile.profile,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Settings);
