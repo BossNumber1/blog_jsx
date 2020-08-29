@@ -4,7 +4,7 @@ import { useRoutes } from "./routes";
 import { BrowserRouter as Router } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 
-function App() {
+const App = () => {
     const routes = useRoutes(true);
     const isAuthenticated = 1;
     return (
@@ -13,6 +13,6 @@ function App() {
             <div className="container">{routes}</div>
         </Router>
     );
-}
+};
 
 export default App;

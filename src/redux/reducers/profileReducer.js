@@ -9,7 +9,8 @@ export const profileReducer = (state = initialState, action) => {
         case UPGRADE_PROFILE:
             return {
                 ...state,
-                profile: state.profile.concat([action.payload]),
+                // profile: state.profile.concat([action.payload]),
+                profile: [action.payload],
             };
         default:
             return state;
