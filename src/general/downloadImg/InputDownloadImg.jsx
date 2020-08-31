@@ -1,11 +1,11 @@
 import React from "react";
-// import "./PostForm.css";
+import "../../components/PostForm/PostForm.css";
 
-export default ({ onChange, successSelectFile }) => {
+export default ({ title, onChange, successSelectFile }) => {
     return (
         <div>
             <div className="form-group">
-                <label htmlFor="messagePost">Добавить изображение</label>
+                <label htmlFor="messagePost">{title}</label>
 
                 <div className="input-group mb-3">
                     <div className="custom-file">

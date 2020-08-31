@@ -75,6 +75,7 @@ class PostForm extends React.Component {
                 />
 
                 <InputDownloadImg
+                    title="Картинка"
                     onChange={this.functionDownloadImg}
                     successSelectFile={this.state.successSelectFile}
                 />

@@ -4,7 +4,7 @@ export default ({ value, onChange }) => {
     return (
         <div>
             <div className="form-group">
-                <label htmlFor="title">Заголовок поста</label>
+                <label htmlFor="title">Заголовок</label>
                 <input
                     type="text"
                     className="form-control"

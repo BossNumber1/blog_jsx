@@ -68,7 +68,6 @@ class Settings extends React.Component {
 
     render() {
         let firstName, secondName, fileImg;
-
         let propsProfileData = this.props.profileData;
 
         if (propsProfileData.length > 0) {
@@ -95,6 +94,7 @@ class Settings extends React.Component {
                     />
 
                     <InputDownloadImg
+                        title="Аватарка"
                         onChange={this.functionDownloadImg}
                         successSelectFile={this.state.successSelectFile}
                     />
@@ -103,12 +103,14 @@ class Settings extends React.Component {
                         Обновить
                     </button>
                 </form>
-                {firstName && secondName && (
+                {firstName && secondName && fileImg && (
                     <div className="jumbotron jumbotron-fluid pt-3">
                         <div className="container">
                             <h1 className="display-4">Твои данные</h1>
-                            <p className="lead">Имя - {firstName}</p>
-                            <p className="lead">Фамилия - {secondName}</p>
+                            <p className="lead">
+                                {firstName} {secondName}
+                            </p>
+                            <p className="lead"></p>
                             <img
                                 src={fileImg}
                                 className="card-img-top"

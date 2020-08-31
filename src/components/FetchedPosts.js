@@ -23,5 +23,6 @@ export default () => {
             </button>
         );
     }
+
     return posts.map((post) => <Post post={post} key={post.id} />);
 };
