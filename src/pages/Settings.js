@@ -110,7 +110,6 @@ class Settings extends React.Component {
                             <p className="lead">
                                 {firstName} {secondName}
                             </p>
-                            <p className="lead"></p>
                             <img
                                 src={fileImg}
                                 className="card-img-top"

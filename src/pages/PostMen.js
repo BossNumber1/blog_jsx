@@ -1,5 +1,4 @@
 import React from "react";
-import "materialize-css";
 import PostForm from "../components/PostForm/PostForm";
 import Posts from "../components/Posts";
 
