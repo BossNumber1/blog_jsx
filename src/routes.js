@@ -5,7 +5,7 @@ import PostMen from "./pages/PostMen";
 import AuthPage from "./pages/AuthPage";
 import Menu from "./pages/Menu";
 import Settings from "./pages/Settings";
-import Profile from "./pages/Profile";
+import Profile from "./pages/ProfilePage/Profile";
 
 export const useRoutes = (isAuthenticated) => {
     if (isAuthenticated) {

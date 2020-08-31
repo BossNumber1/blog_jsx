@@ -1,0 +1,18 @@
+.ava {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 7px 7px 7px 0;
+}
+
+.info {
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+
+.infoIcon {
+    position: relative;
+    top: 30px;
+    left: 20px;
+}
