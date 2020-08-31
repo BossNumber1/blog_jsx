@@ -14,6 +14,9 @@ export const NavBar = () => {
                         <NavLink to="/settings">Настройки</NavLink>
                     </li>
                     <li>
+                        <NavLink to="/profile">Профиль</NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/postmen">Посты</NavLink>
                     </li>
                     <li>
