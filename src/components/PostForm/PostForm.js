@@ -6,6 +6,7 @@ import { timer } from "../time";
 import InputTitle from "./InputTitle";
 import InputMessage from "./InputMessage";
 import InputDownloadImg from "./InputDownloadImg";
+import { successDownloadImgHandler } from "../../general/successDownloadImgHandler";
 // import "./PostForm.css";
 
 class PostForm extends React.Component {
@@ -49,33 +50,13 @@ class PostForm extends React.Component {
         }));
     };
 
-    successDownloadImgHandler = (e) => {
-        e.persist();
-
-        const toBase64 = (file) =>
-            new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = (error) => reject(error);
-            });
-
-        async function Main() {
-            const file = e.target.files[0];
-            return await toBase64(file);
-        }
-
-        Main()
-            .then((result) => {
-                this.setState((prev) => ({
-                    ...prev,
-                    ...{
-                        successSelectFile: e.target.files[0].name,
-                        fileImg: result,
-                    },
-                }));
-            })
-            .catch(console.log);
+    functionDownloadImg = (e) => {
+        successDownloadImgHandler(e, (res) =>
+            this.setState((prev) => ({
+                ...prev,
+                ...res,
+            }))
+        );
     };
 
     render() {
@@ -94,7 +75,7 @@ class PostForm extends React.Component {
                 />
 
                 <InputDownloadImg
-                    onChange={this.successDownloadImgHandler}
+                    onChange={this.functionDownloadImg}
                     successSelectFile={this.state.successSelectFile}
                 />
 
