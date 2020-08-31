@@ -4,6 +4,8 @@ import { upgradeProfile, showAlert } from "../redux/actions";
 import { Alert } from "../components/Alert";
 import InputFirstName from "../components/Profile/InputFirstName";
 import InputSecondName from "../components/Profile/InputSecondName";
+import InputDownloadImg from "../general/downloadImg/InputDownloadImg";
+import { successDownloadImgHandler } from "../general/downloadImg/successDownloadImgHandler";
 
 class Settings extends React.Component {
     constructor(props) {
@@ -12,25 +14,38 @@ class Settings extends React.Component {
         this.state = {
             firstName: "",
             secondName: "",
+            successSelectFile: "",
+            fileImg: "",
         };
     }
 
     submitHandler = (e) => {
         e.preventDefault();
 
-        const { firstName, secondName } = this.state;
+        const {
+            firstName,
+            secondName,
+            successSelectFile,
+            fileImg,
+        } = this.state;
 
-        if (!firstName.trim() || !secondName.trim()) {
+        if (
+            !firstName.trim() ||
+            !secondName.trim() ||
+            !successSelectFile.trim()
+        ) {
             return this.props.showAlert("Все поля должны быть заполнены");
         }
 
         const newDataUser = {
             firstName,
             secondName,
+            successSelectFile,
+            fileImg,
         };
 
         this.props.upgradeProfile(newDataUser);
-        this.setState({ firstName: "", secondName: "" });
+        this.setState({ firstName: "", secondName: "", successSelectFile: "" });
     };
 
     changeInputHandler = (e) => {
@@ -42,18 +57,24 @@ class Settings extends React.Component {
         }));
     };
 
+    functionDownloadImg = (e) => {
+        successDownloadImgHandler(e, (res) =>
+            this.setState((prev) => ({
+                ...prev,
+                ...res,
+            }))
+        );
+    };
+
     render() {
-        console.log("prop =", this.props);
-        let firstName, secondName;
-        let propsFirstName = this.props.firstName;
-        let propsSecondName = this.props.secondName;
+        let firstName, secondName, fileImg;
 
-        if (propsFirstName.length !== 0) {
-            firstName = this.props.firstName[0].firstName;
-        }
+        let propsProfileData = this.props.profileData;
 
-        if (propsSecondName.length !== 0) {
-            secondName = this.props.secondName[0].secondName;
+        if (propsProfileData.length > 0) {
+            firstName = propsProfileData[0].firstName;
+            secondName = propsProfileData[0].secondName;
+            fileImg = propsProfileData[0].fileImg;
         }
 
         return (
@@ -73,6 +94,11 @@ class Settings extends React.Component {
                         onChange={this.changeInputHandler}
                     />
 
+                    <InputDownloadImg
+                        onChange={this.functionDownloadImg}
+                        successSelectFile={this.state.successSelectFile}
+                    />
+
                     <button className="btn btn-warning" type="submit">
                         Обновить
                     </button>
@@ -83,6 +109,11 @@ class Settings extends React.Component {
                             <h1 className="display-4">Твои данные</h1>
                             <p className="lead">Имя - {firstName}</p>
                             <p className="lead">Фамилия - {secondName}</p>
+                            <img
+                                src={fileImg}
+                                className="card-img-top"
+                                alt="аватарка"
+                            />
                         </div>
                     </div>
                 )}
@@ -98,8 +129,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => ({
     alert: state.app.alert,
-    firstName: state.profile.profile,
-    secondName: state.profile.profile,
+    profileData: state.profile.profile,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Settings);

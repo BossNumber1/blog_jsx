@@ -3,11 +3,7 @@ import React from "react";
 export default ({ post }) => {
     return (
         <div className="card" style={{ maxWidth: 18 + "rem" }} className="pt-3">
-            <img
-                src={post.fileImg}
-                className="card-img-top"
-                alt={post.fileImg}
-            />
+            <img src={post.fileImg} className="card-img-top" alt="картинка" />
             <div className="card-body">
                 <h5 className="card-title">{post.title}</h5>
                 <p className="card-text">

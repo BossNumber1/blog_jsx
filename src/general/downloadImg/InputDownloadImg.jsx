@@ -1,5 +1,5 @@
 import React from "react";
-import "./PostForm.css";
+// import "./PostForm.css";
 
 export default ({ onChange, successSelectFile }) => {
     return (

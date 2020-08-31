@@ -5,8 +5,8 @@ import { Alert } from "../Alert";
 import { timer } from "../time";
 import InputTitle from "./InputTitle";
 import InputMessage from "./InputMessage";
-import InputDownloadImg from "./InputDownloadImg";
-import { successDownloadImgHandler } from "../../general/successDownloadImgHandler";
+import InputDownloadImg from "../../general/downloadImg/InputDownloadImg";
+import { successDownloadImgHandler } from "../../general/downloadImg/successDownloadImgHandler";
 // import "./PostForm.css";
 
 class PostForm extends React.Component {
