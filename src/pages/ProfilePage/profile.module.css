@@ -1,24 +1,37 @@
 .ava {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     float: left;
     margin: 7px 7px 7px 0;
+    border-radius: 5px;
 }
 
-.info {
+.name {
     position: relative;
-    top: 30px;
+    top: 230px;
+    left: -175px;
+}
+
+.age {
+    position: relative;
+    top: -165px;
     left: 30px;
 }
 
-.infoIcon {
+.nameIcon {
     position: relative;
-    top: 30px;
-    left: 20px;
+    top: 230px;
+    left: -190px;
+}
+
+.ageIcon {
+    position: relative;
+    top: -165px;
+    left: 18px;
 }
 
 .posts {
     position: relative;
-    top: 50px;
+    top: -35px;
     left: 20px;
 }
