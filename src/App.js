@@ -2,7 +2,7 @@ import React from "react";
 import "materialize-css";
 import { useRoutes } from "./routes";
 import { BrowserRouter as Router } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
+import { NavBar } from "./general/navbar/NavBar";
 
 const App = () => {
     const routes = useRoutes(true);

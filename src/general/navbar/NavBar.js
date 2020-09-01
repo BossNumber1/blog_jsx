@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import s from "./navbar.module.css";
 
 export const NavBar = () => {
     return (
@@ -11,16 +12,24 @@ export const NavBar = () => {
                 <span className="brand-logo">ВСети</span>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li>
-                        <NavLink to="/settings">Настройки</NavLink>
+                        <NavLink to="/settings" activeClassName={s.activeLink}>
+                            Настройки
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/profile">Профиль</NavLink>
+                        <NavLink to="/profile" activeClassName={s.activeLink}>
+                            Профиль
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/album">Альбом</NavLink>
+                        <NavLink to="/album" activeClassName={s.activeLink}>
+                            Альбом
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/menu">Меню</NavLink>
+                        <NavLink to="/menu" activeClassName={s.activeLink}>
+                            Меню
+                        </NavLink>
                     </li>
                     <li>
                         <a href="/">Выйти</a>
