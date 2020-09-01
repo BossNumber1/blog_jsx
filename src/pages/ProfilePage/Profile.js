@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import s from "./profile.module.css";
 import "materialize-css";
+import PostMen from "../PostMen";
 
 const Profile = (props) => {
     let firstName, secondName, fileImg;
@@ -28,7 +29,6 @@ const Profile = (props) => {
             {firstName && secondName && fileImg && (
                 <>
                     <img src={fileImg} className={s.ava} alt="аватарка" />
-
                     <div className={s.infoIcon}>
                         <ul className="left hide-on-med-and-down">
                             <li>
@@ -40,6 +40,9 @@ const Profile = (props) => {
                     </div>
                     <div className={s.info}>
                         {firstName} {secondName}
+                    </div>
+                    <div className={s.posts}>
+                        <PostMen />
                     </div>
                 </>
             )}

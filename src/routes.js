@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Album from "./pages/Album";
-import PostMen from "./pages/PostMen";
 import AuthPage from "./pages/AuthPage";
 import Menu from "./pages/Menu";
 import Settings from "./pages/Settings";
@@ -17,9 +16,6 @@ export const useRoutes = (isAuthenticated) => {
                 <Route path="/profile" exact>
                     <Profile />
                 </Route>
-                <Route path="/postmen" exact>
-                    <PostMen />
-                </Route>
                 <Route path="/album" exact>
                     <Album />
                 </Route>
@@ -27,7 +23,7 @@ export const useRoutes = (isAuthenticated) => {
                     <Menu />
                 </Route>
 
-                <Redirect to="/menu" />
+                <Redirect to="/profile" />
             </Switch>
         );
     }

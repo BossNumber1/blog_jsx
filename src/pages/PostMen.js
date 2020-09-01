@@ -5,7 +5,6 @@ import Posts from "../components/Posts";
 const PostMen = () => {
     return (
         <div className="container pt-4">
-            <h4>Посты</h4>
             <div className="row">
                 <div className="col">
                     <PostForm />
