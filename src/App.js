@@ -10,7 +10,7 @@ const App = () => {
     return (
         <Router>
             {isAuthenticated === 1 && <NavBar />}
-            <div className="container">{routes}</div>
+            {routes}
         </Router>
     );
 };

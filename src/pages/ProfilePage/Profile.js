@@ -45,7 +45,7 @@ const Profile = (props) => {
                         <ul className="left hide-on-med-and-down">
                             <li>
                                 <i className="material-icons brown-text">
-                                    face
+                                    account_circle
                                 </i>
                             </li>
                         </ul>
@@ -61,7 +61,7 @@ const Profile = (props) => {
                         <ul className="left hide-on-med-and-down">
                             <li>
                                 <i className="material-icons brown-text">
-                                    hourglass_empty
+                                    cake
                                 </i>
                             </li>
                         </ul>

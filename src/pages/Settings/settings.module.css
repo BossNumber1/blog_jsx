@@ -1,0 +1,24 @@
+.wrapper {
+    margin: 1%;
+    display: grid;
+    grid-template-areas: "n c";
+    grid-template-columns: 5fr 7fr;
+}
+
+.anketa {
+    grid-area: n;
+}
+
+.result {
+    grid-area: c;
+    margin-left: 3%;
+}
+
+.button {
+    width: 109px;
+    height: 36px;
+    background-color: orange;
+    position: relative;
+    margin-top: 10%;
+    left: 40%;
+}

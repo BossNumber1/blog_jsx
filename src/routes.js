@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Album from "./pages/Album";
 import AuthPage from "./pages/AuthPage";
 import Menu from "./pages/Menu";
-import Settings from "./pages/Settings";
+import Settings from "./pages/Settings/Settings";
 import Profile from "./pages/ProfilePage/Profile";
 
 export const useRoutes = (isAuthenticated) => {

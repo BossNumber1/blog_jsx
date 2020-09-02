@@ -1,31 +1,21 @@
 import React from "react";
 import "../../components/PostForm/PostForm.css";
 
-export default ({ title, onChange, successSelectFile }) => {
+export default ({ title, onChange }) => {
     return (
-        <div>
-            <div className="form-group">
-                <label htmlFor="messagePost">{title}</label>
-
-                <div className="input-group mb-3">
-                    <div className="custom-file">
-                        <input
-                            type="file"
-                            className="custom-file-input"
-                            id="inputGroupFile01"
-                            aria-describedby="inputGroupFileAddon01"
-                            onChange={onChange}
-                        />
-                        <label
-                            className="custom-file-label"
-                            htmlFor="inputGroupFile01"
-                        >
-                            {successSelectFile
-                                ? successSelectFile
-                                : "Выберите файл"}
-                        </label>
-                    </div>
-                </div>
+        <div className="file-field input-field">
+            <div className="btn">
+                <span>{title}</span>
+                <input
+                    id="ava"
+                    alt="ava"
+                    type="file"
+                    onChange={onChange}
+                    className="custom-file-input"
+                />
+            </div>
+            <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
             </div>
         </div>
     );

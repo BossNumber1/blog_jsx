@@ -15,16 +15,16 @@ export default (props) => {
         // </div>
 
         <div className="input-field col s6">
-            <i className="material-icons prefix">account_circle</i>
+            <i className="material-icons prefix">public</i>
             <input
-                id="firstName"
+                id="country"
                 type="text"
                 className="validate"
-                name="firstName"
+                name="country"
                 value={props.value}
                 onChange={props.onChange}
             />
-            <label htmlFor="icon_prefix">Имя</label>
+            <label htmlFor="icon_prefix">Страна</label>
         </div>
     );
 };

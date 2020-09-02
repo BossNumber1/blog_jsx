@@ -18,7 +18,7 @@ export const NavBar = () => {
                     </li>
                     <li>
                         <NavLink to="/profile" activeClassName={s.activeLink}>
-                            Досье
+                            Профиль
                         </NavLink>
                     </li>
                     <li>
