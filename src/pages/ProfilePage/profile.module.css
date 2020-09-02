@@ -6,32 +6,36 @@
     border-radius: 5px;
 }
 
-.name {
-    position: relative;
-    top: 230px;
-    left: -175px;
-}
-
-.age {
-    position: relative;
-    top: -165px;
-    left: 30px;
-}
-
-.nameIcon {
-    position: relative;
-    top: 230px;
-    left: -190px;
-}
-
-.ageIcon {
-    position: relative;
-    top: -165px;
-    left: 18px;
-}
-
 .posts {
     position: relative;
     top: -35px;
     left: 20px;
+}
+
+.info {
+    position: absolute;
+    margin-left: 0.3%;
+    height: 300px;
+    width: 14.2%;
+    top: 47%;
+    /* background-color: black; */
+}
+
+.block {
+    position: relative;
+    height: 10%;
+    /* background-color: lightblue; */
+}
+
+.icon {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+}
+
+.text {
+    /* color: white; */
+    position: absolute;
+    top: 10%;
+    left: 20%;
 }

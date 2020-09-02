@@ -6,13 +6,14 @@ import "materialize-css";
 import PostMen from "../PostMen";
 
 const Profile = (props) => {
-    let firstName, secondName, age, fileImg;
+    let firstName, secondName, age, country, fileImg;
     let propsProfileData = props.profileData;
 
     if (propsProfileData.length > 0) {
         firstName = propsProfileData[0].firstName;
         secondName = propsProfileData[0].secondName;
         age = propsProfileData[0].age;
+        country = propsProfileData[0].country;
         fileImg = propsProfileData[0].fileImg;
     } else {
         return (
@@ -38,10 +39,15 @@ const Profile = (props) => {
 
     return (
         <div className="container pt-4">
-            {firstName && secondName && age && fileImg && (
-                <>
-                    <img src={fileImg} className={s.ava} alt="аватарка" />
-                    <div className={s.nameIcon}>
+            <img src={fileImg} className={s.ava} alt="аватарка" />
+
+            <div className={s.posts}>
+                <PostMen />
+            </div>
+
+            <div className={s.info}>
+                <div className={s.block}>
+                    <div className={s.icon}>
                         <ul className="left hide-on-med-and-down">
                             <li>
                                 <i className="material-icons brown-text">
@@ -50,14 +56,13 @@ const Profile = (props) => {
                             </li>
                         </ul>
                     </div>
-                    <div className={s.name}>
+                    <div className={s.text}>
                         {firstName} {secondName}
                     </div>
-                    <div className={s.posts}>
-                        <PostMen />
-                    </div>
-
-                    <div className={s.ageIcon}>
+                </div>
+                {/* ---------------------------- */}
+                <div className={s.block}>
+                    <div className={s.icon}>
                         <ul className="left hide-on-med-and-down">
                             <li>
                                 <i className="material-icons brown-text">
@@ -66,9 +71,22 @@ const Profile = (props) => {
                             </li>
                         </ul>
                     </div>
-                    <div className={s.age}>{age} лет</div>
-                </>
-            )}
+                    <div className={s.text}>{age} лет</div>
+                </div>
+                {/* ---------------------------- */}
+                <div className={s.block}>
+                    <div className={s.icon}>
+                        <ul className="left hide-on-med-and-down">
+                            <li>
+                                <i className="material-icons brown-text">
+                                    public
+                                </i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className={s.text}>{country}</div>
+                </div>
+            </div>
         </div>
     );
 };

@@ -8,6 +8,7 @@ import InputMessage from "./InputMessage";
 import InputDownloadImg from "../../general/downloadImg/InputDownloadImg";
 import { successDownloadImgHandler } from "../../general/downloadImg/successDownloadImgHandler";
 // import "./PostForm.css";
+import s from "./postform.module.css";
 
 class PostForm extends React.Component {
     constructor(props) {
@@ -74,15 +75,19 @@ class PostForm extends React.Component {
                     onChange={this.changeInputHandler}
                 />
 
-                <InputDownloadImg
-                    title="Картинка"
-                    onChange={this.functionDownloadImg}
-                    successSelectFile={this.state.successSelectFile}
-                />
+                <div className="pt-3">
+                    <InputDownloadImg
+                        title="Картинка"
+                        onChange={this.functionDownloadImg}
+                        successSelectFile={this.state.successSelectFile}
+                    />
+                </div>
 
-                <button className="btn btn-success" type="submit">
-                    Создать
-                </button>
+                <div className={s.button}>
+                    <button className="btn btn-success" type="submit">
+                        Создать
+                    </button>
+                </div>
             </form>
         );
     }
