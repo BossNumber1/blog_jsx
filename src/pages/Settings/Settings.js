@@ -19,6 +19,7 @@ class Settings extends React.Component {
             firstName: "",
             secondName: "",
             age: "",
+            country: "",
             successSelectFile: "",
             fileImg: "",
         };
@@ -31,6 +32,7 @@ class Settings extends React.Component {
             firstName,
             secondName,
             age,
+            country,
             successSelectFile,
             fileImg,
         } = this.state;
@@ -39,7 +41,8 @@ class Settings extends React.Component {
             !firstName.trim() ||
             !secondName.trim() ||
             !successSelectFile.trim() ||
-            !age.trim()
+            !age.trim() ||
+            !country.trim()
         ) {
             return this.props.showAlert("Все поля должны быть заполнены");
         }
@@ -48,6 +51,7 @@ class Settings extends React.Component {
             firstName,
             secondName,
             age,
+            country,
             successSelectFile,
             fileImg,
         };
@@ -74,13 +78,14 @@ class Settings extends React.Component {
     };
 
     render() {
-        let firstName, secondName, age, fileImg;
+        let firstName, secondName, age, country, fileImg;
         let propsProfileData = this.props.profileData;
 
         if (propsProfileData.length > 0) {
             firstName = propsProfileData[0].firstName;
             secondName = propsProfileData[0].secondName;
             age = propsProfileData[0].age;
+            country = propsProfileData[0].country;
             fileImg = propsProfileData[0].fileImg;
         }
 
@@ -151,12 +156,16 @@ class Settings extends React.Component {
                                     )}
                                 </div>
                                 <div className="card-content">
-                                    {firstName && secondName && age ? (
+                                    {firstName &&
+                                    secondName &&
+                                    age &&
+                                    country ? (
                                         <p>
-                                            {firstName} {secondName}, {age} лет
+                                            {firstName} {secondName}, {age} лет,{" "}
+                                            {country}
                                         </p>
                                     ) : (
-                                        <p>Иван Иванов, 120 лет</p>
+                                        <p>Иван Иванов, 120 лет, London</p>
                                     )}
                                 </div>
                                 <div className="card-action">
