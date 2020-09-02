@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import s from "./profile.module.css";
 import "materialize-css";
 import PostMen from "../PostMen";
+import ProfileInfo from "./ProfileInfo";
 
 const Profile = (props) => {
     let firstName, secondName, age, country, fileImg;
@@ -37,6 +38,16 @@ const Profile = (props) => {
         );
     }
 
+    let infoData = [
+        { id: 0, icon: "account_circle", text: `${firstName} ${secondName}` },
+        { id: 1, icon: "cake", text: `${age} лет` },
+        { id: 2, icon: "public", text: `${country}` },
+    ];
+
+    let infoElements = infoData.map((i) => (
+        <ProfileInfo icon={i.icon} text={i.text} />
+    ));
+
     return (
         <div className="container pt-4">
             <img src={fileImg} className={s.ava} alt="аватарка" />
@@ -45,48 +56,7 @@ const Profile = (props) => {
                 <PostMen />
             </div>
 
-            <div className={s.info}>
-                <div className={s.block}>
-                    <div className={s.icon}>
-                        <ul className="left hide-on-med-and-down">
-                            <li>
-                                <i className="material-icons brown-text">
-                                    account_circle
-                                </i>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={s.text}>
-                        {firstName} {secondName}
-                    </div>
-                </div>
-                {/* ---------------------------- */}
-                <div className={s.block}>
-                    <div className={s.icon}>
-                        <ul className="left hide-on-med-and-down">
-                            <li>
-                                <i className="material-icons brown-text">
-                                    cake
-                                </i>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={s.text}>{age} лет</div>
-                </div>
-                {/* ---------------------------- */}
-                <div className={s.block}>
-                    <div className={s.icon}>
-                        <ul className="left hide-on-med-and-down">
-                            <li>
-                                <i className="material-icons brown-text">
-                                    public
-                                </i>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={s.text}>{country}</div>
-                </div>
-            </div>
+            <div className={s.info}>{infoElements}</div>
         </div>
     );
 };
