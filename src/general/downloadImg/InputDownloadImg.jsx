@@ -1,7 +1,7 @@
 import React from "react";
 import "../../components/PostForm/PostForm.css";
 
-export default ({ title, onChange }) => {
+export default ({ title, onChange, successSelectFile }) => {
     return (
         <div className="file-field input-field">
             <div className="btn">
@@ -15,7 +15,11 @@ export default ({ title, onChange }) => {
                 />
             </div>
             <div className="file-path-wrapper">
-                <input className="file-path validate" type="text" />
+                <input
+                    className="file-path validate"
+                    type="text"
+                    value={successSelectFile}
+                />
             </div>
         </div>
     );

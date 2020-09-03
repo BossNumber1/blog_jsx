@@ -2,18 +2,22 @@ import React from "react";
 
 export default ({ value, onChange }) => {
     return (
-        <div>
-            <div className="form-group">
-                <label htmlFor="title">Заголовок</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="title"
-                    value={value}
-                    name="title"
-                    onChange={onChange}
-                />
-            </div>
+        <div className="row">
+            <form className="col s12">
+                <div className="row">
+                    <div className="input-field col s6">
+                        <i className="material-icons prefix">mode_edit</i>
+                        <textarea
+                            id="title"
+                            className="materialize-textarea"
+                            name="title"
+                            onChange={onChange}
+                            value={value}
+                        ></textarea>
+                        <label htmlFor="title">Заголовок</label>
+                    </div>
+                </div>
+            </form>
         </div>
     );
 };

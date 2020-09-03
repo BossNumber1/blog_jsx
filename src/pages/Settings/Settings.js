@@ -128,6 +128,7 @@ class Settings extends React.Component {
                         <InputDownloadImg
                             title="Аватарка"
                             onChange={this.functionDownloadImg}
+                            successSelectFile={this.state.successSelectFile}
                         />
 
                         <div className={s.button}>
