@@ -80,7 +80,9 @@ export default ({
                         <div className="card">
                             <div className="card-image mx-auto d-block pt-3">
                                 {fileImg ? (
-                                    <img src={fileImg} alt="аватарка" />
+                                    <div className={s.ava}>
+                                        <img src={fileImg} alt="аватарка" />
+                                    </div>
                                 ) : (
                                     <img
                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTMyJn14ZEFjpLLMuEXcoz-YmbrtUyTvS7kFw&usqp=CAU"
