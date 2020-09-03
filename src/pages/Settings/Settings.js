@@ -1,15 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { upgradeProfile, showAlert } from "../../redux/actions";
-import { Alert } from "../../components/Alert";
-import InputFirstName from "../../components/Profile/InputFirstName";
-import InputSecondName from "../../components/Profile/InputSecondName";
-import InputDownloadImg from "../../general/downloadImg/InputDownloadImg";
 import { successDownloadImgHandler } from "../../general/downloadImg/successDownloadImgHandler";
-import InputAge from "../../components/Profile/InputAge";
-import s from "./settings.module.css";
-import InputCountry from "../../components/Profile/InputCountry";
+import SettingsUI from "./SettingsUI";
 
 class Settings extends React.Component {
     constructor(props) {
@@ -90,95 +83,22 @@ class Settings extends React.Component {
         }
 
         return (
-            <div className={s.wrapper}>
-                <div className={s.anketa}>
-                    <form onSubmit={this.submitHandler} className="pb-5">
-                        {this.props.alert && <Alert text={this.props.alert} />}
-
-                        <div className="row">
-                            <form className="col s12">
-                                <div className="row">
-                                    <InputFirstName
-                                        value={this.state.firstName}
-                                        onChange={this.changeInputHandler}
-                                    />
-                                    <InputSecondName
-                                        value={this.state.secondName}
-                                        onChange={this.changeInputHandler}
-                                    />
-                                </div>
-                            </form>
-                        </div>
-
-                        <div className="row">
-                            <form className="col s12">
-                                <div className="row">
-                                    <InputAge
-                                        value={this.state.age}
-                                        onChange={this.changeInputHandler}
-                                    />
-                                    <InputCountry
-                                        value={this.state.country}
-                                        onChange={this.changeInputHandler}
-                                    />
-                                </div>
-                            </form>
-                        </div>
-
-                        <InputDownloadImg
-                            title="Аватарка"
-                            onChange={this.functionDownloadImg}
-                            successSelectFile={this.state.successSelectFile}
-                        />
-
-                        <div className={s.button}>
-                            <button
-                                className="btn btn-warning mr-4"
-                                type="submit"
-                            >
-                                Обновить
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <div className={s.result}>
-                    <div className="row">
-                        <div className="col s12 m7">
-                            <div className="card">
-                                <div className="card-image mx-auto d-block pt-3">
-                                    {fileImg ? (
-                                        <img src={fileImg} alt="аватарка" />
-                                    ) : (
-                                        <img
-                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTMyJn14ZEFjpLLMuEXcoz-YmbrtUyTvS7kFw&usqp=CAU"
-                                            alt="аватарка"
-                                        />
-                                    )}
-                                </div>
-                                <div className="card-content">
-                                    {firstName &&
-                                    secondName &&
-                                    age &&
-                                    country ? (
-                                        <p>
-                                            {firstName} {secondName}, {age} лет,{" "}
-                                            {country}
-                                        </p>
-                                    ) : (
-                                        <p>Иван Иванов, 120 лет, London</p>
-                                    )}
-                                </div>
-                                <div className="card-action">
-                                    <NavLink to="/profile">
-                                        Перейти в профиль
-                                    </NavLink>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <SettingsUI
+                alert={this.props.alert}
+                submitHandler={this.submitHandler}
+                firstNameState={this.state.firstName}
+                secondNameState={this.state.secondName}
+                changeInputHandler={this.changeInputHandler}
+                ageState={this.state.age}
+                countryState={this.state.country}
+                functionDownloadImg={this.functionDownloadImg}
+                successSelectFile={this.state.successSelectFile}
+                fileImg={fileImg}
+                firstName={firstName}
+                secondName={secondName}
+                age={age}
+                country={country}
+            />
         );
     }
 }

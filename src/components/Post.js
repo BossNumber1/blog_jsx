@@ -1,7 +1,6 @@
 import React from "react";
 
 export default ({ post }) => {
-    debugger;
     return (
         <div className="card" style={{ maxWidth: 18 + "rem" }} className="pt-3">
             {post.fileImg && (
