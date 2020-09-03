@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import s from "./profile.module.css";
 import "materialize-css";
@@ -8,35 +8,43 @@ import ProfileInfo from "./ProfileInfo";
 
 const Profile = (props) => {
     let firstName, secondName, age, country, fileImg;
-    let propsProfileData = props.profileData;
+    // let propsProfileData = props.profileData;
 
-    if (propsProfileData.length > 0) {
-        firstName = propsProfileData[0].firstName;
-        secondName = propsProfileData[0].secondName;
-        age = propsProfileData[0].age;
-        country = propsProfileData[0].country;
-        fileImg = propsProfileData[0].fileImg;
-    } else {
-        return (
-            <div className="container pt-5">
-                <div className="card text-center">
-                    <div className="card-header">Внимание</div>
-                    <div className="card-body">
-                        <h5 className="card-title">Профиль пуст</h5>
-                        <p className="card-text">
-                            Лишь заполнив его, можно получить новые
-                            возможности...
-                        </p>
+    //for test
+    firstName = "a";
+    secondName = "b";
+    age = "120";
+    country = "usa";
+    fileImg = "";
+    //end
 
-                        <NavLink to="/settings" className="btn btn-primary">
-                            начать
-                        </NavLink>
-                    </div>
-                    <div className="card-footer text-muted">Удачи!</div>
-                </div>
-            </div>
-        );
-    }
+    // if (propsProfileData.length > 0) {
+    //     firstName = propsProfileData[0].firstName;
+    //     secondName = propsProfileData[0].secondName;
+    //     age = propsProfileData[0].age;
+    //     country = propsProfileData[0].country;
+    //     fileImg = propsProfileData[0].fileImg;
+    // } else {
+    //     return (
+    //         <div className="container pt-5">
+    //             <div className="card text-center">
+    //                 <div className="card-header">Внимание</div>
+    //                 <div className="card-body">
+    //                     <h5 className="card-title">Профиль пуст</h5>
+    //                     <p className="card-text">
+    //                         Лишь заполнив его, можно получить новые
+    //                         возможности...
+    //                     </p>
+
+    //                     <NavLink to="/settings" className="btn btn-primary">
+    //                         начать
+    //                     </NavLink>
+    //                 </div>
+    //                 <div className="card-footer text-muted">Удачи!</div>
+    //             </div>
+    //         </div>
+    //     );
+    // }
 
     let infoData = [
         { id: 0, icon: "account_circle", text: `${firstName} ${secondName}` },
