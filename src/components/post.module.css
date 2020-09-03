@@ -1,0 +1,11 @@
+.postBlock {
+    background-color: lightgray;
+    border-radius: 5px;
+    height: 135px;
+    padding-left: 15px;
+}
+
+.postBlock img {
+    margin-top: 25px;
+    margin-right: 25px;
+}
