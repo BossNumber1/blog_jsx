@@ -59,25 +59,38 @@ class PostForm extends React.Component {
     };
 
     render() {
+        let inputData = [
+            {
+                id: 0,
+                icon: "mode_edit",
+                name: "title",
+                label: "Заголовок",
+                value: this.state.title,
+            },
+            {
+                id: 1,
+                icon: "keyboard",
+                name: "messagePost",
+                label: "Текст",
+                value: this.state.messagePost,
+            },
+        ];
+
+        let inputElements = inputData.map((i) => (
+            <InputPost
+                icon={i.icon}
+                name={i.name}
+                label={i.label}
+                value={i.value}
+                onChange={this.changeInputHandler}
+            />
+        ));
+
         return (
             <form onSubmit={this.submitHandler}>
                 {this.props.alert && <Alert text={this.props.alert} />}
 
-                <InputPost
-                    icon="mode_edit"
-                    name="title"
-                    label="Заголовок"
-                    value={this.state.title}
-                    onChange={this.changeInputHandler}
-                />
-
-                <InputPost
-                    icon="keyboard"
-                    name="messagePost"
-                    label="Текст"
-                    value={this.state.messagePost}
-                    onChange={this.changeInputHandler}
-                />
+                {inputElements}
 
                 <div className="pt-3">
                     <InputDownloadImg

@@ -49,32 +49,15 @@ const Profile = (props) => {
     ));
 
     return (
-        <>
-            <div className="container pt-4">
-                <img src={fileImg} className={s.ava} alt="аватарка" />
+        <div className="container pt-4">
+            <img src={fileImg} className={s.ava} alt="аватарка" />
 
-                <div className={s.posts}>
-                    <PostMen />
-                </div>
-
-                <div className={s.info}>{infoElements}</div>
+            <div className={s.posts}>
+                <PostMen />
             </div>
 
-            {/* <div className="row">
-                <form className="col s12">
-                    <div className="row">
-                        <div className="input-field col s6">
-                            <i className="material-icons prefix">mode_edit</i>
-                            <textarea
-                                id="icon_prefix2"
-                                className="materialize-textarea"
-                            ></textarea>
-                            <label htnlFor="icon_prefix2">Заголовок</label>
-                        </div>
-                    </div>
-                </form>
-            </div> */}
-        </>
+            <div className={s.info}>{infoElements}</div>
+        </div>
     );
 };
 
