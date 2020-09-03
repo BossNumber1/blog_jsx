@@ -1,20 +1,20 @@
 import React from "react";
 
-export default ({ value, onChange }) => {
+export default ({ icon, name, label, value, onChange }) => {
     return (
         <div className="row">
             <form className="col s12">
                 <div className="row">
                     <div className="input-field col s6">
-                        <i className="material-icons prefix">keyboard</i>
+                        <i className="material-icons prefix">{icon}</i>
                         <textarea
-                            id="messagePost"
+                            id={name}
                             className="materialize-textarea"
-                            name="messagePost"
+                            name={name}
                             onChange={onChange}
                             value={value}
                         ></textarea>
-                        <label htmlFor="messagePost">Текст</label>
+                        <label htmlFor={name}>{label}</label>
                     </div>
                 </div>
             </form>

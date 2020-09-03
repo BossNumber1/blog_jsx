@@ -3,12 +3,10 @@ import { connect } from "react-redux";
 import { createPost, showAlert } from "../../redux/actions";
 import { Alert } from "../Alert";
 import { timer } from "../time";
-import InputTitle from "./InputTitle";
-import InputMessage from "./InputMessage";
 import InputDownloadImg from "../../general/downloadImg/InputDownloadImg";
 import { successDownloadImgHandler } from "../../general/downloadImg/successDownloadImgHandler";
-// import "./PostForm.css";
 import s from "./postform.module.css";
+import InputPost from "./InputPost";
 
 class PostForm extends React.Component {
     constructor(props) {
@@ -65,12 +63,18 @@ class PostForm extends React.Component {
             <form onSubmit={this.submitHandler}>
                 {this.props.alert && <Alert text={this.props.alert} />}
 
-                <InputTitle
+                <InputPost
+                    icon="mode_edit"
+                    name="title"
+                    label="Заголовок"
                     value={this.state.title}
                     onChange={this.changeInputHandler}
                 />
 
-                <InputMessage
+                <InputPost
+                    icon="keyboard"
+                    name="messagePost"
+                    label="Текст"
                     value={this.state.messagePost}
                     onChange={this.changeInputHandler}
                 />
