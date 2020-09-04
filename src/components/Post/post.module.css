@@ -1,9 +1,10 @@
 .postBlock {
-    background-color: lightgray;
+    background-color: rgb(233, 233, 233);
     border-radius: 5px;
     height: 135px;
     padding-left: 15px;
     box-shadow: 0 0 10px gray;
+    margin-left: 155px;
 }
 
 .postBlock img {

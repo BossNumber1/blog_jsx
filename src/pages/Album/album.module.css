@@ -1,0 +1,16 @@
+.body {
+    width: 23px;
+    height: 23px;
+}
+
+.body img {
+    /* width: 1000px;
+    height: 745px; */
+    width: 700px;
+    height: 521px;
+    position: relative;
+    left: 130px;
+    top: 37px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+}

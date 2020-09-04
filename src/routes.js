@@ -1,10 +1,11 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Album from "./pages/Album";
+import Album from "./pages/Album/Album";
 import AuthPage from "./pages/AuthPage";
 import Menu from "./pages/Menu";
 import Settings from "./pages/Settings/Settings";
 import Profile from "./pages/ProfilePage/Profile";
+import Music from "./pages/Music/Music";
 
 export const useRoutes = (isAuthenticated) => {
     if (isAuthenticated) {
@@ -18,6 +19,9 @@ export const useRoutes = (isAuthenticated) => {
                 </Route>
                 <Route path="/album" exact>
                     <Album />
+                </Route>
+                <Route path="/music" exact>
+                    <Music />
                 </Route>
                 <Route path="/menu" exact>
                     <Menu />
