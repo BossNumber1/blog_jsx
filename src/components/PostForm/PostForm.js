@@ -78,6 +78,7 @@ class PostForm extends React.Component {
 
         let inputElements = inputData.map((i) => (
             <InputPost
+                key={i.id}
                 icon={i.icon}
                 name={i.name}
                 label={i.label}
@@ -87,25 +88,32 @@ class PostForm extends React.Component {
         ));
 
         return (
-            <form onSubmit={this.submitHandler}>
+            <div>
                 {this.props.alert && <Alert text={this.props.alert} />}
+                <div className={s.createPost}>
+                    <div className={s.controls}>
+                        {inputElements}
 
-                {inputElements}
+                        <div className="pt-3">
+                            <InputDownloadImg
+                                title="Картинка"
+                                onChange={this.functionDownloadImg}
+                                successSelectFile={this.state.successSelectFile}
+                            />
+                        </div>
+                    </div>
 
-                <div className="pt-3">
-                    <InputDownloadImg
-                        title="Картинка"
-                        onChange={this.functionDownloadImg}
-                        successSelectFile={this.state.successSelectFile}
-                    />
+                    <div className={s.button}>
+                        <button
+                            className="btn btn-success"
+                            type="submit"
+                            onClick={this.submitHandler}
+                        >
+                            Создать
+                        </button>
+                    </div>
                 </div>
-
-                <div className={s.button}>
-                    <button className="btn btn-success" type="submit">
-                        Создать
-                    </button>
-                </div>
-            </form>
+            </div>
         );
     }
 }

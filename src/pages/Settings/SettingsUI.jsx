@@ -27,7 +27,7 @@ export default ({
     return (
         <div className={s.wrapper}>
             <div className={s.anketa}>
-                <form onSubmit={submitHandler} className="pb-5">
+                <div className="pb-5">
                     {alert && <Alert text={alert} />}
 
                     <div className="row">
@@ -67,11 +67,15 @@ export default ({
                     />
 
                     <div className={s.button}>
-                        <button className="btn btn-warning mr-4" type="submit">
+                        <button
+                            className="btn btn-warning mr-4"
+                            type="submit"
+                            onClick={submitHandler}
+                        >
                             Обновить
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
 
             <div className={s.result}>

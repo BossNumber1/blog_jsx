@@ -1,6 +1,6 @@
 import React from "react";
 import PostForm from "../components/PostForm/PostForm";
-import Posts from "../components/Posts";
+import Posts from "../components/Posts/Posts";
 
 const PostMen = () => {
     return (

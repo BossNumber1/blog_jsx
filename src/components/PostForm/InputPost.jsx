@@ -2,7 +2,7 @@ import React from "react";
 
 export default ({ icon, name, label, value, onChange }) => {
     return (
-        <div className="row">
+        <div className="row mb-n5">
             <form className="col s12">
                 <div className="row">
                     <div className="input-field col s6">

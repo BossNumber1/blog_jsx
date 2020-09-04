@@ -45,7 +45,7 @@ const Profile = (props) => {
     ];
 
     let infoElements = infoData.map((i) => (
-        <ProfileInfo icon={i.icon} text={i.text} />
+        <ProfileInfo key={i.id} icon={i.icon} text={i.text} />
     ));
 
     return (
