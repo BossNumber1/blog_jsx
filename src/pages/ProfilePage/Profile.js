@@ -49,14 +49,20 @@ const Profile = (props) => {
     ));
 
     return (
-        <div className="container pt-4">
-            <img src={fileImg} className={s.ava} alt="аватарка" />
+        <div className={s.wrapper}>
+            <div className={s.main}>
+                <img src={fileImg} className={s.ava} alt="аватарка" />
 
-            <div className={s.posts}>
-                <PostMen />
+                <div className={s.posts}>
+                    <PostMen />
+                </div>
+
+                <div className={s.info}>{infoElements}</div>
             </div>
-
-            <div className={s.info}>{infoElements}</div>
+            <div className={s.additional}>
+                <h5>Сегодня 04.09</h5>
+                <h6>Облачно</h6>
+            </div>
         </div>
     );
 };
