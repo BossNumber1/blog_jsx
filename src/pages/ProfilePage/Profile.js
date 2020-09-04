@@ -5,6 +5,7 @@ import s from "./profile.module.css";
 import "materialize-css";
 import PostMen from "../PostMen";
 import ProfileInfo from "./ProfileInfo";
+import Add from "./additional/Add";
 
 const Profile = (props) => {
     let firstName, secondName, age, country, fileImg;
@@ -60,8 +61,7 @@ const Profile = (props) => {
                 <div className={s.info}>{infoElements}</div>
             </div>
             <div className={s.additional}>
-                <h5>Сегодня 04.09</h5>
-                <h6>Облачно</h6>
+                <Add />
             </div>
         </div>
     );
