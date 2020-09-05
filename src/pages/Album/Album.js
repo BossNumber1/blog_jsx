@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./album.module.css";
 import photo1 from "./img/photo1.png";
+import photo2 from "./img/photo2.png";
 import img2 from "./img/img2.jpg";
 import img3 from "./img/img3.jpg";
 
@@ -8,7 +9,7 @@ class Album extends React.Component {
     constructor() {
         super();
         this.state = {
-            images: [photo1, img2, img3],
+            images: [photo1, photo2, img2, img3],
             currentImageIndex: 0,
             isCycleMode: false,
             canGoPrev: false,
@@ -64,33 +65,31 @@ class Album extends React.Component {
     render() {
         return (
             <div className="container">
+                <div className={s.prev}>
+                    <input
+                        disabled={!this.state.canGoPrev}
+                        data-direction="prev"
+                        onClick={this.nextSlideHandler}
+                        className="btn btn-success"
+                        value="⇦"
+                        type="submit"
+                    />
+                </div>
                 <div className={s.body}>
-                    <div>
-                        <button
-                            disabled={!this.state.canGoPrev}
-                            data-direction="prev"
-                            onClick={this.nextSlideHandler}
-                        >
-                            PREV
-                        </button>
-                    </div>
-                    <div>
-                        <img
-                            src={
-                                this.state.images[this.state.currentImageIndex]
-                            }
-                            alt="photo"
-                        />
-                    </div>
-                    <div>
-                        <button
-                            disabled={!this.state.canGoNext}
-                            data-direction="next"
-                            onClick={this.nextSlideHandler}
-                        >
-                            NEXT
-                        </button>
-                    </div>
+                    <img
+                        src={this.state.images[this.state.currentImageIndex]}
+                        alt="photo"
+                    />
+                </div>
+                <div className={s.next}>
+                    <input
+                        disabled={!this.state.canGoNext}
+                        data-direction="next"
+                        onClick={this.nextSlideHandler}
+                        className="btn btn-success"
+                        value="⇨"
+                        type="submit"
+                    />
                 </div>
             </div>
         );

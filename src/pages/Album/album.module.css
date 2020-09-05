@@ -14,3 +14,14 @@
     border-radius: 5px;
     box-shadow: 0 0 10px gray;
 }
+
+.prev {
+    position: absolute;
+    margin-top: 280px;
+}
+
+.next {
+    position: absolute;
+    margin-top: 258px;
+    margin-left: 900px;
+}
