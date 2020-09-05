@@ -66,14 +66,17 @@ class Album extends React.Component {
         return (
             <div className="container">
                 <div className={s.prev}>
-                    <input
+                    <div
                         disabled={!this.state.canGoPrev}
                         data-direction="prev"
                         onClick={this.nextSlideHandler}
-                        className="btn btn-success"
-                        value="⇦"
+                        className="btn btn-outline-primary"
                         type="submit"
-                    />
+                    >
+                        <i className="material-icons prefix">
+                            keyboard_arrow_left
+                        </i>
+                    </div>
                 </div>
                 <div className={s.body}>
                     <img
@@ -82,14 +85,17 @@ class Album extends React.Component {
                     />
                 </div>
                 <div className={s.next}>
-                    <input
+                    <div
                         disabled={!this.state.canGoNext}
                         data-direction="next"
                         onClick={this.nextSlideHandler}
-                        className="btn btn-success"
-                        value="⇨"
+                        className="btn btn-outline-primary"
                         type="submit"
-                    />
+                    >
+                        <i className="material-icons prefix">
+                            keyboard_arrow_right
+                        </i>
+                    </div>
                 </div>
             </div>
         );
