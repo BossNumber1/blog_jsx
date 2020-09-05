@@ -24,14 +24,15 @@ const Profile = (props) => {
                     <div className="card-header">Внимание</div>
                     <div className="card-body">
                         <h5 className="card-title">Профиль пуст</h5>
-                        <p className="card-text">
+                        <p className="card-text pt-4 pb-4">
                             Лишь заполнив его, можно получить новые
                             возможности...
                         </p>
-
-                        <NavLink to="/settings" className="btn btn-primary">
-                            начать
-                        </NavLink>
+                        <div className="pb-3">
+                            <NavLink to="/settings" className="btn btn-primary">
+                                начать
+                            </NavLink>
+                        </div>
                     </div>
                     <div className="card-footer text-muted">Удачи!</div>
                 </div>

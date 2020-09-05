@@ -1,18 +1,18 @@
 import React from "react";
 
-export default ({ value, onChange }) => {
+export default ({ icon, name, label, value, onChange }) => {
     return (
         <div className="input-field col s6">
-            <i className="material-icons prefix">account_box</i>
+            <i className="material-icons prefix">{icon}</i>
             <input
                 className="validate"
-                id="secondName"
+                id={name}
                 type="text"
-                name="secondName"
+                name={name}
                 value={value}
                 onChange={onChange}
             />
-            <label htmlFor="icon_telephone">Фамилия</label>
+            <label htmlFor={name}>{label}</label>
         </div>
     );
 };

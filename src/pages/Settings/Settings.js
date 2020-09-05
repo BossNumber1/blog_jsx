@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { upgradeProfile, showAlert } from "../../redux/actions";
 import { successDownloadImgHandler } from "../../general/downloadImg/successDownloadImgHandler";
-import SettingsUI from "./SettingsUI";
+import SettingsUI from "./UI/SettingsUI";
 
 class Settings extends React.Component {
     constructor(props) {

@@ -1,12 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import s from "./settings.module.css";
-import { Alert } from "../../components/Alert";
-import InputFirstName from "../../components/Profile/InputFirstName";
-import InputSecondName from "../../components/Profile/InputSecondName";
-import InputDownloadImg from "../../general/downloadImg/InputDownloadImg";
-import InputAge from "../../components/Profile/InputAge";
-import InputCountry from "../../components/Profile/InputCountry";
+import s from "../settings.module.css";
+import { Alert } from "../../../components/Alert";
+import InputDownloadImg from "../../../general/downloadImg/InputDownloadImg";
+import InputsMap from "./InputsMap";
 
 export default ({
     alert,
@@ -30,35 +27,13 @@ export default ({
                 <div className="pb-5">
                     {alert && <Alert text={alert} />}
 
-                    <div className="row">
-                        <form className="col s12">
-                            <div className="row">
-                                <InputFirstName
-                                    value={firstNameState}
-                                    onChange={changeInputHandler}
-                                />
-                                <InputSecondName
-                                    value={secondNameState}
-                                    onChange={changeInputHandler}
-                                />
-                            </div>
-                        </form>
-                    </div>
-
-                    <div className="row">
-                        <form className="col s12">
-                            <div className="row">
-                                <InputAge
-                                    value={ageState}
-                                    onChange={changeInputHandler}
-                                />
-                                <InputCountry
-                                    value={countryState}
-                                    onChange={changeInputHandler}
-                                />
-                            </div>
-                        </form>
-                    </div>
+                    <InputsMap
+                        firstNameState={firstNameState}
+                        secondNameState={secondNameState}
+                        ageState={ageState}
+                        countryState={countryState}
+                        changeInputHandler={changeInputHandler}
+                    />
 
                     <InputDownloadImg
                         title="Аватарка"

@@ -6,7 +6,7 @@ function Album() {
     return (
         <div className="container">
             <div className={s.body}>
-                <img src={photo1} />
+                <img src={photo1} alt="photo1" />
             </div>
         </div>
     );

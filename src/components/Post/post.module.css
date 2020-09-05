@@ -12,3 +12,9 @@
     margin-right: 25px;
     box-shadow: 0 0 10px #000;
 }
+
+.like {
+    margin-top: -120px;
+    margin-left: 690px;
+    cursor: pointer;
+}
