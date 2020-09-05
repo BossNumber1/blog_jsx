@@ -22,7 +22,15 @@
     left: 40%;
 }
 
+.avaNoume {
+    width: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px lightcoral;
+}
+
 .ava {
     width: 250px;
     border-radius: 5px;
+    overflow: hidden;
 }
